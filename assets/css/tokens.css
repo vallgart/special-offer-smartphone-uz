@@ -1,0 +1,152 @@
+/* ============================================================================
+   tokens.css — Дизайн-токены в духе дизайн-системы МТС «Гранат» 2.0
+   ----------------------------------------------------------------------------
+   Единственный файл, который нужно править при ребрендинге.
+   Все компоненты в styles.css обращаются только к переменным отсюда.
+   ========================================================================== */
+
+:root {
+  /* ---------- Палитра бренда --------------------------------------------- */
+  --mts-red:            #FF0032; /* MTS Red — основной акцент */
+  --mts-red-hover:      #E4002D;
+  --mts-red-active:     #C7002A;
+  --mts-red-soft:       #FFE5EA; /* подложки, бейджи */
+
+  /* ---------- Акцентные цвета «Граната» ----------------------------------- */
+  --c-blueberry:        #0097FD; /* Черника  */
+  --c-blueberry-soft:   #E1F3FF;
+  --c-mint:             #00C19B; /* Мята     */
+  --c-mint-soft:        #DFF7F1;
+  --c-banana:           #FAC031; /* Банан    */
+  --c-banana-soft:      #FFF4DA;
+  --c-orange:           #F95721; /* Апельсин */
+  --c-orange-soft:      #FFE9E1;
+  --c-plum:             #6E4AE6; /* Слива    */
+  --c-plum-soft:        #ECE7FD;
+
+  /* ---------- Нейтральная шкала (Ежевика → Белый) ------------------------- */
+  --grey-900:           #1D2023; /* Ежевика — основной текст */
+  --grey-800:           #2B3036;
+  --grey-700:           #434A51;
+  --grey-600:           #626C77; /* вторичный текст */
+  --grey-500:           #969FA8; /* третичный текст, плейсхолдеры */
+  --grey-400:           #BBC1C7; /* иконки-заглушки */
+  --grey-300:           #E2E5EB; /* границы */
+  --grey-200:           #F2F3F7; /* фон секций */
+  --grey-100:           #FAFAFC;
+  --white:              #FFFFFF;
+
+  /* ---------- Семантические роли (светлая тема) --------------------------- */
+  --bg-page:            var(--white);
+  --bg-muted:           var(--grey-200);
+  --bg-card:            var(--white);
+  --bg-inverted:        var(--grey-900);
+  --bg-overlay:         rgba(29, 32, 35, .55);
+
+  --text-primary:       var(--grey-900);
+  --text-secondary:     var(--grey-600);
+  --text-tertiary:      var(--grey-500);
+  --text-inverted:      var(--white);
+  --text-brand:         var(--mts-red);
+
+  --border-subtle:      var(--grey-300);
+  --border-strong:      var(--grey-400);
+
+  --focus-ring:         var(--c-blueberry);
+
+  /* ---------- Типографика --------------------------------------------------- */
+  --font-wide:  'Fira Sans',, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-text:  'Fira Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Модульная шкала: clamp() = адаптив без media-queries */
+  --fs-display:  clamp(2.25rem, 1.30rem + 4.2vw, 4.25rem); /* 36 → 68 */
+  --fs-h1:       clamp(1.95rem, 1.35rem + 2.6vw, 3.00rem); /* 31 → 48 */
+  --fs-h2:       clamp(1.60rem, 1.20rem + 1.7vw, 2.25rem); /* 26 → 36 */
+  --fs-h3:       clamp(1.25rem, 1.08rem + 0.8vw, 1.60rem); /* 20 → 26 */
+  --fs-lead:     clamp(1.05rem, 0.98rem + 0.4vw, 1.25rem); /* 17 → 20 */
+  --fs-body:     1rem;      /* 16 */
+  --fs-sm:       0.9375rem; /* 15 */
+  --fs-xs:       0.8125rem; /* 13 */
+
+  --lh-tight:    1.08;
+  --lh-snug:     1.25;
+  --lh-normal:   1.5;
+  --lh-relaxed:  1.65;
+
+  --ls-display:  -0.02em;
+  --ls-heading:  -0.01em;
+
+  /* ---------- Сетка и отступы (шаг 4px) ----------------------------------- */
+  --sp-2:   0.25rem;
+  --sp-4:   0.5rem;
+  --sp-6:   0.75rem;
+  --sp-8:   1rem;
+  --sp-12:  1.5rem;
+  --sp-16:  2rem;
+  --sp-20:  2.5rem;
+  --sp-24:  3rem;
+  --sp-32:  4rem;
+  --sp-40:  5rem;
+  --sp-48:  6rem;
+
+  --container:     1280px;
+  --container-pad: clamp(1rem, 0.5rem + 2.2vw, 2.5rem);
+  --section-pad:   clamp(3rem, 2rem + 5vw, 6.5rem);
+
+  /* ---------- Радиусы («Гранат 2.0» — увеличенные) ------------------------ */
+  --r-xs:   8px;
+  --r-sm:   12px;
+  --r-md:   16px;
+  --r-lg:   24px;
+  --r-xl:   32px;
+  --r-pill: 999px;
+
+  /* ---------- Тени --------------------------------------------------------- */
+  --sh-xs: 0 1px 2px rgba(29, 32, 35, .06);
+  --sh-sm: 0 4px 12px rgba(29, 32, 35, .07);
+  --sh-md: 0 10px 28px rgba(29, 32, 35, .09);
+  --sh-lg: 0 24px 56px rgba(29, 32, 35, .13);
+  --sh-red: 0 12px 28px rgba(255, 0, 50, .28);
+
+  /* ---------- Движение ----------------------------------------------------- */
+  --ease-out:   cubic-bezier(.22, .61, .36, 1);
+  --ease-soft:  cubic-bezier(.4, 0, .2, 1);
+  --dur-fast:   .16s;
+  --dur-base:   .26s;
+  --dur-slow:   .5s;
+
+  --header-h: 68px;
+}
+
+/* ---------- Тёмная тема ---------------------------------------------------
+   Переопределяем только семантические роли — палитра бренда не меняется. */
+:root[data-theme='dark'] {
+  --bg-page:       #0F1214;
+  --bg-muted:      #171B1F;
+  --bg-card:       #1A1F24;
+  --bg-inverted:   #F2F3F7;
+  --bg-overlay:    rgba(0, 0, 0, .7);
+
+  --text-primary:   #F2F3F7;
+  --text-secondary: #A8B0B8;
+  --text-tertiary:  #7E878F;
+  --text-inverted:  #0F1214;
+
+  --border-subtle: #2A3037;
+  --border-strong: #3A424A;
+
+  --mts-red:       #FF2D53; /* чуть светлее для контраста на тёмном */
+  --mts-red-soft:  #34131B;
+
+  --c-blueberry-soft: #0E2536;
+  --c-mint-soft:      #0B2A25;
+  --c-banana-soft:    #2E2513;
+  --c-orange-soft:    #33180F;
+  --c-plum-soft:      #1E1836;
+
+  --sh-xs: 0 1px 2px rgba(0, 0, 0, .5);
+  --sh-sm: 0 4px 12px rgba(0, 0, 0, .45);
+  --sh-md: 0 10px 28px rgba(0, 0, 0, .5);
+  --sh-lg: 0 24px 56px rgba(0, 0, 0, .6);
+  --sh-red: 0 12px 28px rgba(255, 45, 83, .3);
+}
